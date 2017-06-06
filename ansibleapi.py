@@ -63,7 +63,7 @@ class AnsibleAPI(object):
 
 def main():
     with open('/etc/ansible/hosts', 'w') as f:
-        print >>f, '[qxb_server]'
+        print >>f, '[server_list]'
     ipl = []
     for ip in ipl:
         ansb = AnsibleAPI(ip, 'root', '11111')
@@ -72,5 +72,5 @@ def main():
 
 if __name__ == '__main__':
     main()
-    ansbapi = AnsibleAPI('qxb_server', 'demo', '11111')
-    print ansbapi.runcmd('qxb_server', 'free -g')
+    ansbapi = AnsibleAPI('server_list', 'root', '11111')
+    print ansbapi.runcmd('server_list', 'free -g')
